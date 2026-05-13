@@ -18,6 +18,40 @@
 
   <!-- ====== ESTILOS NUEVOS ====== -->
   <style>
+    body {
+      margin: 0;
+    }
+
+    /* 🔥 SOLO CAMBIO IMPORTANTE: menos espacio arriba */
+    .hero {
+      height: 10px; /* antes era grande o vacío */
+    }
+
+    .about {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .about__inner {
+      margin-top: 0;
+    }
+
+    .about__top {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .about__script {
+      margin-top: 0;
+    }
+
+    .about__heading {
+      margin-top: 5px;
+    }
+
+    /* =========================
+       SERVICIOS
+    ========================= */
     .custom-services {
       margin-top: 50px;
       padding: 0 20px;
@@ -117,26 +151,11 @@
   <header class="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">dianastudio</a>
-
-      <nav class="nav__links">
-        <a href="#about">Sobre mí</a>
-        <a href="#services">Servicios</a>
-        <a href="#values">Valores</a>
-        <a href="#work">Proyectos</a>
-        <a href="#contact">Contacto</a>
-      </nav>
-
-      <div class="nav__right">
-        <div class="nav__social">
-          <a href="#">IG</a>
-          <a href="#">IN</a>
-          <a href="#">TT</a>
-        </div>
-      </div>
     </div>
   </header>
 
-  <section class="hero"></section>
+  <!-- 🔥 solo esto evita el gran espacio -->
+  <section class="hero" style="height:0px;"></section>
 
   <section class="about" id="about">
 
@@ -158,8 +177,6 @@
 
       </div>
 
-      <!-- ======= NUEVO BLOQUE ======= -->
-
       <div class="custom-services">
         <h2 class="services-title">Servicios:</h2>
 
@@ -179,7 +196,6 @@
 
         <div class="slider">
 
-          <!-- PAGE 1 -->
           <div class="page">
             <div class="card">
               <video autoplay muted loop src="imagenes/Beauty Product.mp4"></video>
@@ -202,7 +218,6 @@
             </div>
           </div>
 
-          <!-- PAGE 2 -->
           <div class="page">
             <div class="card">
               <video autoplay muted loop src="imagenes/Gym.mp4"></video>
@@ -225,7 +240,6 @@
             </div>
           </div>
 
-          <!-- PAGE 3 -->
           <div class="page">
             <div class="card">
               <video autoplay muted loop src="imagenes/Tratamientos faciales.mp4"></video>
@@ -248,7 +262,6 @@
             </div>
           </div>
 
-          <!-- PAGE 4 -->
           <div class="page">
             <div class="card">
               <img src="imagenes/polaroid.jpg"/>
