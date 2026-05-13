@@ -9,98 +9,61 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Allura&display=swap"
+    rel="stylesheet"
+  />
 
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- ====== ESTILOS NUEVOS ====== -->
   <style>
-
-    body {
-      margin: 0;
-      background: #0a0a0a;
-      color: #fff;
-      font-family: Inter, sans-serif;
-    }
-
-    /* =========================
-       AJUSTE ESPACIO (REDUCIDO)
-    ========================= */
-    .about {
-      padding-top: 2px;
-    }
-
-    .about__top {
-      margin-top: 0;
-    }
-
-    .about__heading {
-      margin-bottom: 6px;
-    }
-
-    /* =========================
-       POLAROID (NO TOCADA)
-    ========================= */
-    .about__polaroid {
-      margin-top: 6px;
-    }
-
-    .about__polaroid-image {
-      width: 180px;
-      border-radius: 14px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    /* =========================
-       SERVICIOS PREMIUM
-    ========================= */
     .custom-services {
-      margin-top: 25px;
+      margin-top: 50px;
       padding: 0 20px;
     }
 
     .services-title {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 38px;
-      margin-bottom: 18px;
-      letter-spacing: 1px;
+      font-size: 28px;
+      font-weight: 500;
+      margin-bottom: 20px;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 12px;
     }
 
     .service-box {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
-      padding: 20px;
-      border-radius: 16px;
+      padding: 18px;
+      border-radius: 14px;
       text-align: center;
       font-size: 13px;
-      transition: all 0.35s ease;
-      backdrop-filter: blur(12px);
+      color: #fff;
+      transition: all .3s ease;
+      backdrop-filter: blur(10px);
       cursor: pointer;
     }
 
     .service-box:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.1);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      transform: translateY(-4px) scale(1.03);
+      background: rgba(255,255,255,0.08);
     }
 
-    /* =========================
-       VIDEO SECTION
-    ========================= */
     .video-section {
-      margin-top: 40px;
+      margin-top: 60px;
       padding: 0 20px;
     }
 
     .video-title {
       font-size: 26px;
-      margin-bottom: 16px;
-      font-weight: 500;
+      margin-bottom: 20px;
     }
 
+    /* SLIDER */
     .slider {
       display: flex;
       overflow-x: auto;
@@ -118,6 +81,7 @@
       min-width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
       gap: 12px;
       scroll-snap-align: start;
     }
@@ -128,7 +92,8 @@
       background: rgba(255,255,255,0.04);
     }
 
-    .card video {
+    .card video,
+    .card img {
       width: 100%;
       height: 180px;
       object-fit: cover;
@@ -137,140 +102,165 @@
     .card .info {
       padding: 8px;
       font-size: 12px;
-      color: #ddd;
     }
 
+    @media(max-width:768px){
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <section class="about">
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">dianastudio</a>
 
-    <div class="about__top">
+      <nav class="nav__links">
+        <a href="#about">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#values">Valores</a>
+        <a href="#work">Proyectos</a>
+        <a href="#contact">Contacto</a>
+      </nav>
 
-      <p class="about__script">Hola, soy Diana</p>
+      <div class="nav__right">
+        <div class="nav__social">
+          <a href="#">IG</a>
+          <a href="#">IN</a>
+          <a href="#">TT</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <h2 class="about__heading">
-        EXPERTA EN INTELIGENCIA ARTIFICIAL<br/>
-        & MARKETING DIGITAL
-      </h2>
+  <section class="hero"></section>
 
-      <!-- POLAROID (NO TOCAR) -->
-      <div class="about__polaroid">
-        <img src="imagenes/polaroid.jpg" class="about__polaroid-image"/>
+  <section class="about" id="about">
+
+    <div class="about__inner">
+
+      <div class="about__top">
+
+        <p class="about__script">Hola, soy Diana</p>
+
+        <h2 class="about__heading">
+          EXPERTA EN INTELIGENCIA ARTIFICIAL<br />
+          & MARKETING DIGITAL
+        </h2>
+
+        <!-- POLAROID -->
+        <div class="about__polaroid">
+          <img src="imagenes/polaroid.jpg" class="about__polaroid-image"/>
+        </div>
+
       </div>
 
-    </div>
+      <!-- ======= NUEVO BLOQUE ======= -->
 
-    <!-- =========================
-       SERVICIOS (MODERNO + 6)
-    ========================= -->
+      <div class="custom-services">
+        <h2 class="services-title">Servicios:</h2>
 
-    <div class="custom-services">
-
-      <h2 class="services-title">Servicios</h2>
-
-      <div class="services-grid">
-
-        <div class="service-box">Marketing Digital</div>
-        <div class="service-box">Desarrollo de Webs</div>
-        <div class="service-box">Desarrollo de Apps</div>
-        <div class="service-box">Organización de Eventos</div>
-        <div class="service-box">Creadora de Contenido / Influencer</div>
-        <div class="service-box">IA para Empresas</div>
-
+        <div class="services-grid">
+          <div class="service-box">Marketing Digital</div>
+          <div class="service-box">Webs</div>
+          <div class="service-box">Apps</div>
+          <div class="service-box">Organización de Eventos</div>
+          <div class="service-box">Creadora de Contenido / Influencer</div>
+          <div class="service-box">IA para Empresas</div>
+        </div>
       </div>
 
-    </div>
+      <div class="video-section">
 
-    <!-- =========================
-       MARKETING DIGITAL VIDEOS
-    ========================= -->
+        <h2 class="video-title">Marketing Digital</h2>
 
-    <div class="video-section">
+        <div class="slider">
 
-      <h2 class="video-title">Marketing Digital</h2>
+          <!-- PAGE 1 -->
+          <div class="page">
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Beauty Product.mp4"></video>
+              <div class="info">Beauty Product</div>
+            </div>
 
-      <div class="slider">
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Beauty.mp4"></video>
+              <div class="info">Beauty</div>
+            </div>
 
-        <div class="page">
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Clinica estética.mp4"></video>
+              <div class="info">Clínica Estética</div>
+            </div>
 
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Beauty Product.mp4"></video>
-            <div class="info">Beauty Product</div>
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Dentista.mp4"></video>
+              <div class="info">Dentista</div>
+            </div>
           </div>
 
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Beauty.mp4"></video>
-            <div class="info">Beauty</div>
+          <!-- PAGE 2 -->
+          <div class="page">
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Gym.mp4"></video>
+              <div class="info">Gym</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Joyeria.mp4"></video>
+              <div class="info">Joyería</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Peluqueria.mp4"></video>
+              <div class="info">Peluquería</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Ropa.mp4"></video>
+              <div class="info">Ropa</div>
+            </div>
           </div>
 
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Clinica estética.mp4"></video>
-            <div class="info">Clínicas</div>
+          <!-- PAGE 3 -->
+          <div class="page">
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Tratamientos faciales.mp4"></video>
+              <div class="info">Tratamientos Faciales</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/UGC.mp4"></video>
+              <div class="info">UGC</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Video irreal.mp4"></video>
+              <div class="info">Irreal</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/Video realista.mp4"></video>
+              <div class="info">Realista</div>
+            </div>
           </div>
 
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Dentista.mp4"></video>
-            <div class="info">Dentistas</div>
+          <!-- PAGE 4 -->
+          <div class="page">
+            <div class="card">
+              <img src="imagenes/polaroid.jpg"/>
+              <div class="info">Polaroid</div>
+            </div>
+
+            <div class="card">
+              <video autoplay muted loop src="imagenes/video realista 2.mp4"></video>
+              <div class="info">Realista 2</div>
+            </div>
           </div>
 
-        </div>
-
-        <div class="page">
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Gym.mp4"></video>
-            <div class="info">Gym</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Joyeria.mp4"></video>
-            <div class="info">Joyería</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Peluqueria.mp4"></video>
-            <div class="info">Peluquería</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Ropa.mp4"></video>
-            <div class="info">Ropa</div>
-          </div>
-
-        </div>
-
-        <div class="page">
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Tratamientos faciales.mp4"></video>
-            <div class="info">Faciales</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/UGC.mp4"></video>
-            <div class="info">UGC IA</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Video irreal.mp4"></video>
-            <div class="info">Ads IA</div>
-          </div>
-
-          <div class="card">
-            <video autoplay muted loop src="imagenes/Video realista.mp4"></video>
-            <div class="info">Ads Realistas</div>
-          </div>
-
-        </div>
-
-        <div class="page">
-          <div class="card">
-            <video autoplay muted loop src="imagenes/video realista 2.mp4"></video>
-            <div class="info">Campañas Premium</div>
-          </div>
         </div>
 
       </div>
