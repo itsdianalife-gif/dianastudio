@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- CAMBIO: añadida Zen Brush 2 para el título Servicios -->
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Allura&family=Zen+Brush+2&display=swap"
     rel="stylesheet"
@@ -22,14 +21,14 @@
       margin: 0;
     }
 
-    /* CAMBIO 1: menos espacio arriba */
+    /* CAMBIO: espacio mínimo entre nav y "Hola soy Diana" */
     .hero {
-      height: 10px;
+      height: 0px;
     }
 
     .about {
       margin-top: 0;
-      padding-top: 0;
+      padding-top: 4px;
     }
 
     .about__inner {
@@ -39,6 +38,7 @@
     .about__top {
       margin-top: 0;
       padding-top: 0;
+      margin-bottom: 32px;
     }
 
     .about__script {
@@ -57,134 +57,126 @@
       padding: 0 20px;
     }
 
-    /* CAMBIO 2: tipografía de pincel con gradiente morado-fucsia */
+    /* CAMBIO: tipografía pincel, degradado marrón-dorado */
     .services-title {
       font-family: 'Zen Brush 2', cursive;
-      font-size: clamp(52px, 8vw, 80px);
+      font-size: clamp(56px, 9vw, 88px);
       font-weight: 400;
       margin-bottom: 40px;
       line-height: 1;
-      background: linear-gradient(120deg, #be185d 0%, #9333ea 35%, #c026d3 60%, #7c3aed 100%);
+      background: linear-gradient(120deg, #6b3a1f 0%, #c8862a 35%, #e8c46a 60%, #a0612a 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       display: inline-block;
     }
 
-    /* CAMBIO 3: tarjetas premium oscuras y legibles */
+    /* CAMBIO: grid más grande */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
+      gap: 16px;
     }
 
+    /* CAMBIO: tarjetas fondo dorado, letras negras, más grandes */
     .service-box {
       position: relative;
       overflow: hidden;
       border-radius: 18px;
-      padding: 28px 24px 24px;
+      padding: 34px 28px 30px;
       cursor: pointer;
-      background: #1a1118;
-      border: 1px solid rgba(147, 51, 234, 0.15);
-      transition: transform .4s cubic-bezier(.23,1,.32,1), border-color .4s ease, box-shadow .4s ease;
+      background: linear-gradient(135deg, #c8862a 0%, #e8c46a 40%, #d4a843 70%, #b8732a 100%);
+      border: 1px solid rgba(232, 196, 106, 0.4);
+      transition: transform .4s cubic-bezier(.23,1,.32,1), box-shadow .4s ease;
       display: flex;
       flex-direction: column;
-      gap: 12px;
-      min-height: 130px;
+      gap: 14px;
+      min-height: 150px;
       text-align: left;
-      font-size: 13px;
-      color: #f5f0ff;
     }
 
-    .service-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(192,38,211,0.6), rgba(147,51,234,0.6), transparent);
-      opacity: 0;
-      transition: opacity .4s ease;
-    }
-
+    /* brillo sweep al hover */
     .service-box::after {
       content: '';
       position: absolute;
       top: 0; left: -120%;
-      width: 80%; height: 100%;
-      background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04), transparent);
+      width: 60%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255,255,255,0.25), transparent);
       transition: left .6s ease;
     }
 
     .service-box:hover {
       transform: translateY(-6px);
-      border-color: rgba(192, 38, 211, 0.4);
-      box-shadow: 0 20px 60px -10px rgba(147,51,234,0.25), 0 0 0 1px rgba(192,38,211,0.12);
-      background: #1a1118;
+      box-shadow: 0 20px 50px -10px rgba(184, 115, 42, 0.45);
     }
 
-    .service-box:hover::before { opacity: 1; }
-    .service-box:hover::after  { left: 120%; }
+    .service-box:hover::after { left: 140%; }
 
     .s-num {
       font-family: 'Cormorant Garamond', serif;
       font-size: 11px;
       font-style: italic;
-      color: rgba(192, 38, 211, 0.4);
-      letter-spacing: .12em;
+      color: rgba(0, 0, 0, 0.4);
+      letter-spacing: .14em;
     }
 
+    /* CAMBIO: nombre en negro */
     .s-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      line-height: 1.25;
-      color: #f5f0ff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1a0f00;
       letter-spacing: .01em;
     }
 
+    /* CAMBIO: subtag oscuro legible sobre fondo dorado */
     .s-tag {
-      font-size: .65rem;
+      font-size: .68rem;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(192, 38, 211, 0.55);
+      color: rgba(0, 0, 0, 0.55);
       margin-top: auto;
     }
 
     .s-arrow {
       position: absolute;
       bottom: 20px; right: 20px;
-      width: 28px; height: 28px;
+      width: 30px; height: 30px;
       border-radius: 50%;
-      border: 1px solid rgba(147,51,234,0.25);
+      border: 1px solid rgba(0,0,0,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: .75rem;
-      color: rgba(192,38,211,0.5);
+      font-size: .8rem;
+      color: rgba(0,0,0,0.4);
       opacity: 0;
       transform: translateY(4px);
-      transition: opacity .3s ease, transform .3s ease, background .3s, border-color .3s;
+      transition: opacity .3s ease, transform .3s ease, background .3s;
     }
 
     .service-box:hover .s-arrow {
       opacity: 1;
       transform: translateY(0);
-      background: rgba(192,38,211,0.12);
-      border-color: rgba(192,38,211,0.4);
-      color: #d946ef;
+      background: rgba(0,0,0,0.1);
+      color: #1a0f00;
     }
 
-    .service-box:nth-child(1) { animation: fadeUpBox .5s ease forwards .05s; opacity: 0; }
-    .service-box:nth-child(2) { animation: fadeUpBox .5s ease forwards .12s; opacity: 0; }
-    .service-box:nth-child(3) { animation: fadeUpBox .5s ease forwards .19s; opacity: 0; }
-    .service-box:nth-child(4) { animation: fadeUpBox .5s ease forwards .26s; opacity: 0; }
-    .service-box:nth-child(5) { animation: fadeUpBox .5s ease forwards .33s; opacity: 0; }
-    .service-box:nth-child(6) { animation: fadeUpBox .5s ease forwards .40s; opacity: 0; }
+    /* entrada escalonada */
+    .service-box { opacity: 0; animation: fadeUpBox .5s ease forwards; }
+    .service-box:nth-child(1) { animation-delay: .05s; }
+    .service-box:nth-child(2) { animation-delay: .12s; }
+    .service-box:nth-child(3) { animation-delay: .19s; }
+    .service-box:nth-child(4) { animation-delay: .26s; }
+    .service-box:nth-child(5) { animation-delay: .33s; }
+    .service-box:nth-child(6) { animation-delay: .40s; }
 
     @keyframes fadeUpBox {
       from { opacity: 0; transform: translateY(18px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* VIDEO SECTION — sin tocar */
+    /* =========================
+       VÍDEOS — sin cambios de layout
+    ========================= */
     .video-section {
       margin-top: 60px;
       padding: 0 20px;
@@ -266,7 +258,6 @@
           & MARKETING DIGITAL
         </h2>
 
-        <!-- POLAROID -->
         <div class="about__polaroid">
           <img src="imagenes/polaroid.jpg" class="about__polaroid-image"/>
         </div>
@@ -327,82 +318,70 @@
 
         <h2 class="video-title">Marketing Digital</h2>
 
-        <div class="slider">
+        <!-- CAMBIO: sin autoplay en HTML, lo gestiona IntersectionObserver -->
+        <div class="slider" id="mainSlider">
 
           <div class="page">
             <div class="card">
-              <video autoplay muted loop src="imagenes/Beauty Product.mp4"></video>
+              <video muted loop playsinline src="imagenes/Beauty Product.mp4"></video>
               <div class="info">Beauty Product</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Beauty.mp4"></video>
+              <video muted loop playsinline src="imagenes/Beauty.mp4"></video>
               <div class="info">Beauty</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Clinica estética.mp4"></video>
+              <video muted loop playsinline src="imagenes/Clinica estética.mp4"></video>
               <div class="info">Clínica Estética</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Dentista.mp4"></video>
+              <video muted loop playsinline src="imagenes/Dentista.mp4"></video>
               <div class="info">Dentista</div>
             </div>
           </div>
 
           <div class="page">
             <div class="card">
-              <video autoplay muted loop src="imagenes/Gym.mp4"></video>
+              <video muted loop playsinline src="imagenes/Gym.mp4"></video>
               <div class="info">Gym</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Joyeria.mp4"></video>
+              <video muted loop playsinline src="imagenes/Joyeria.mp4"></video>
               <div class="info">Joyería</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Peluqueria.mp4"></video>
+              <video muted loop playsinline src="imagenes/Peluqueria.mp4"></video>
               <div class="info">Peluquería</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Ropa.mp4"></video>
+              <video muted loop playsinline src="imagenes/Ropa.mp4"></video>
               <div class="info">Ropa</div>
             </div>
           </div>
 
           <div class="page">
             <div class="card">
-              <video autoplay muted loop src="imagenes/Tratamientos faciales.mp4"></video>
+              <video muted loop playsinline src="imagenes/Tratamientos faciales.mp4"></video>
               <div class="info">Tratamientos Faciales</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/UGC.mp4"></video>
+              <video muted loop playsinline src="imagenes/UGC.mp4"></video>
               <div class="info">UGC</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Video irreal.mp4"></video>
+              <video muted loop playsinline src="imagenes/Video irreal.mp4"></video>
               <div class="info">Irreal</div>
             </div>
-
             <div class="card">
-              <video autoplay muted loop src="imagenes/Video realista.mp4"></video>
+              <video muted loop playsinline src="imagenes/Video realista.mp4"></video>
               <div class="info">Realista</div>
             </div>
           </div>
 
+          <!-- CAMBIO: eliminada la card Polaroid -->
           <div class="page">
             <div class="card">
-              <img src="imagenes/polaroid.jpg"/>
-              <div class="info">Polaroid</div>
-            </div>
-
-            <div class="card">
-              <video autoplay muted loop src="imagenes/video realista 2.mp4"></video>
+              <video muted loop playsinline src="imagenes/video realista 2.mp4"></video>
               <div class="info">Realista 2</div>
             </div>
           </div>
@@ -414,6 +393,24 @@
     </div>
 
   </section>
+
+  <script>
+    // CAMBIO: los vídeos se reproducen solos al hacerse visibles en pantalla
+    // No interfieren con el scroll ni el touch del slider
+    const videos = document.querySelectorAll('#mainSlider video');
+
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(() => {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.4 });
+
+    videos.forEach(v => videoObserver.observe(v));
+  </script>
 
 </body>
 </html>
